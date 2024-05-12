@@ -1,35 +1,24 @@
 
 
-// function binarySearch(arr,n){
-//     let startIndex=0;
-//     let endIndex=arr.length-1;
-
-//     while(startIndex<=endIndex){
-//         let middle=Math.floor((startIndex+endIndex)/2);
-
-//         if(n==arr[middle]){
-//             return middle;
-//         }
-
-//         if(n>arr[middle]){
-//             startIndex=middle+1;
-//         }else{
-//             endIndex=middle-1;
-//         }
-
-//     }
-//     return -1;
-
-// }
-// let arr=[1,2,3,4,5];
-// binarySearch(arr,4)
+let array=[6,7,5,7,5,7,45,2,6, 1,-1,2,-2,-3,4];
 
 
-function factorial(n){
-    if(n<=1){
-        return n;
+
+
+function findtriple(array,num){
+    let sum=[];
+  
+        for(let i=0;i<array.length;i++){
+            if(num===(array[i]+array[i+1]+array[i+2]))
+            sum.push(array[i]);
+            sum.push(array[i+1]);
+            sum.push(array[i+2]);
+        }
+        return sum
     }
-    return n*factorial(n-1)
-}
 
-console.log(factorial(5));
+console.log(findtriple(array,21));
+
+let arr=[10,30,20,50,60,70,80,40]
+
+[[2,3,1],[]]

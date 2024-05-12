@@ -363,7 +363,6 @@
 let array=[10,15,20,25,25,35,40];
 
 class Node{
-
   constructor(value){
     this.value=value;
     this.next=null;
