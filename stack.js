@@ -36,7 +36,7 @@ stack.push(250);
 stack.push(450);
 stack.push(560);
 stack.push(600);
-console.log('top:',stack.top());
+console.log('top:',stack.top());    
 console.log('size:',stack.size());
 
 console.log('ans:',reverseString('helloworld'));

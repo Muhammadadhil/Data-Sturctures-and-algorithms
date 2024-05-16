@@ -72,8 +72,6 @@ queue.print()
 //     print(){
 //         console.log(this.items);
 //     }
-
-
 // }
 
 // const queue=new Queue();
@@ -99,8 +97,6 @@ queue.print()
 //         this.rear++;
 //     }
 // }
-
-
 
 
 // var MyQueue = function() {
@@ -155,13 +151,15 @@ queue.print()
 //  * var param_3 = obj.peek()
 //  * var param_4 = obj.empty()
 //  */
+
+
+
 class Node{
     constructor(value){
         this.value=value;
         this.next=null;
     }
 }
-
 
 class  Queue{
     constructor(){
