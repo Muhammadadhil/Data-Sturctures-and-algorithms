@@ -49,75 +49,75 @@
 
 //hashtable handled collision:
  
-// class HashTable{
-//     constructor(size){
-//         this.table=new Array(size);
-//         this.size=size;
-//     }
+class HashTable{
+    constructor(size){
+        this.table=new Array(size);
+        this.size=size;
+    }
 
-//     hash(key){
-//         let total=0;
-//         for(let i=0;i<key.length;i++){
-//             total+=key.charCodeAt(i);
-//         }
-//         return total%this.size;
-//     }
+    hash(key){
+        let total=0;
+        for(let i=0;i<key.length;i++){
+            total+=key.charCodeAt(i);
+        }
+        return total%this.size;
+    }
 
-//     set(key,value){
-//         const index=this.hash(key);
-//         let bucket=this.table[index];
-//         if(!bucket){ 
-//             this.table[index]=[[key,value]];
-//         }else{
-//             const sameKeyItem=bucket.find((item) => item[0]===key);
-//             if(sameKeyItem){
-//                 sameKeyItem[1]=value;
-//             }else{
-//                 bucket.push([key,value]);
-//             }
-//         }
-//     }
+    set(key,value){
+        const index=this.hash(key);
+        let bucket=this.table[index];
+        if(!bucket){ 
+            this.table[index]=[[key,value]];
+        }else{
+            const sameKeyItem=bucket.find((item) => item[0]===key);
+            if(sameKeyItem){
+                sameKeyItem[1]=value;
+            }else{
+                bucket.push([key,value]);
+            }
+        }
+    }
     
-//     get(key){
-//         const index=this.hash(key);
-//         let bucket=this.table[index];
+    get(key){
+        const index=this.hash(key);
+        let bucket=this.table[index];
 
-//         if(bucket){
-//             const sameKeyItem=bucket.find(item => item[0]==key);
-//             if(sameKeyItem){
-//                 return sameKeyItem[1];
-//             }
-//         }
-//         return undefined;
-//     }
+        if(bucket){
+            const sameKeyItem=bucket.find(item => item[0]==key);
+            if(sameKeyItem){
+                return sameKeyItem[1];
+            }
+        }
+        return undefined;
+    }
 
-//     remove(key){
-//         const index=this.hash(key);
-//         const bucket=this.table[index];
-//         if(bucket){
-//             const deleteItem=bucket.find(item=> item[0]==key);
-//             if(deleteItem){
-//                 bucket.splice(bucket.indexOf(deleteItem),1);                
-//             }
-//         }
-//     }
+    remove(key){
+        const index=this.hash(key);
+        const bucket=this.table[index];
+        if(bucket){
+            const deleteItem=bucket.find(item=> item[0]==key);
+            if(deleteItem){
+                bucket.splice(bucket.indexOf(deleteItem),1);                
+            }
+        }
+    }
 
-//     display(){
-//         for(let i=0;i<this.table.length;i++){
-//             if(this.table[i]){
-//                 console.log(i,this.table[i]);
-//             }
-//         }
-//     }
-// }
+    display(){
+        for(let i=0;i<this.table.length;i++){
+            if(this.table[i]){
+                console.log(i,this.table[i]);
+            }
+        }
+    }
+}
 
-// const table1=new HashTable(20);
-// table1.set('name','adhil');
-// table1.set('hello','bahir');
-// table1.set('helol','ajil');
-// console.log(table1.get('name'));
-// console.log(table1.get('hello'));
-// table1.display();
+const table1=new HashTable(20);
+table1.set('name','adhil');
+table1.set('hello','bahir');
+table1.set('helol','ajil');
+console.log(table1.get('name'));
+console.log(table1.get('hello'));
+table1.display();
 
 
 
@@ -152,3 +152,32 @@
 //     }
 // }
 
+
+var groupThePeople = function(group) {
+    const result = []
+    const hash = {}
+      
+    for (let i = 0; i < group.length; i++) {
+      const num = group[i]
+        // console.log('hash:',hash);
+      
+      if (hash[num]) {
+        hash[num].push(i)
+        console.log('pushing1:::',hash[num])
+
+      } else {
+        hash[num] = [i]
+        console.log('pushing2:::',hash[num])
+      }
+      
+      if (hash[num].length === num) {
+        result.push(hash[num])
+        delete hash[num]
+      }
+    }
+    
+    return result
+  };
+
+let arr=[3,3,3,3,3,1,3];
+console.log(groupThePeople(arr));

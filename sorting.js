@@ -74,7 +74,7 @@ function mergeSort(array){
     }
     let middle=Math.floor(array.length/2);                       
 
-    let array1=array.slice(0,middle);     // 
+    let array1=array.slice(0,middle);     
     let array2=array.slice(middle); 
 
     return merge(mergeSort(array1),mergeSort(array2));             

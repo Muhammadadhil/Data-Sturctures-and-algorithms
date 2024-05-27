@@ -41,22 +41,22 @@ console.log('size:',stack.size());
 
 console.log('ans:',reverseString('helloworld'));
 
-// function reverseString(str){
-//     const stack=new Stack();
-//     for(let i=0;i<str.length;i++){
-//         stack.push(str[i]);
-//     }
+function reverseString(str){
+    const stack=new Stack();
+    for(let i=0;i<str.length;i++){
+        stack.push(str[i]);
+    }
 
-//     stack.print();
+    stack.print();
 
-//     let reversedStirng='';
-//     while(!stack.isEmpty()){
-//         reversedStirng+=stack.pop();
-//     }
-//     return reversedStirng;
+    let reversedStirng='';
+    while(!stack.isEmpty()){
+        reversedStirng+=stack.pop();
+    }
+    return reversedStirng;
 
 
-
+}
 
 //implement stack using linkedlist
 // stack.print();
